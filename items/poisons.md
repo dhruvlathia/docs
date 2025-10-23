@@ -1,10 +1,3 @@
----
-
-### **/docs/items/poisons.md**
-
-```markdown
-# Item List: Poisons
-
 Poisons are one-time use consumable items that provide powerful, temporary effects. All poison durations are **2 hours** unless stated otherwise. They are cheap and designed for strategic, short-term advantages.
 
 ### Battle Poisons (Offensive)

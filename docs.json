@@ -1,68 +1,82 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "RPG Game Dev Docs",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#7C3AED",
+    "light": "#A78BFA",
+    "dark": "#5B21B6"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon-rpg.svg",
   "navigation": {
     "tabs": [
       {
         "tab": "Guides",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Getting Started",
             "pages": [
               "index",
               "quickstart",
-              "development"
+              "project-setup",
+              "game-loop"
+            ]
+          },
+          {
+            "group": "Game Design",
+            "pages": [
+              "design/characters",
+              "design/world",
+              "design/quests",
+              "design/inventory"
+            ]
+          },
+          {
+            "group": "Player Stats",
+            "pages": [
+              "stats/core-attributes",
+              "stats/combat-stats",
+              "stats/secondary-stats",
+              "stats/progression"
+            ]
+          },
+          {
+            "group": "Gameplay Systems",
+            "pages": [
+              "systems/combat",
+              "systems/leveling",
+              "systems/economy",
+              "systems/ai"
             ]
           },
           {
             "group": "Customization",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "customization/themes",
+              "customization/ui",
+              "customization/localization"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "API Reference",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "Endpoints",
             "pages": [
-              "api-reference/introduction"
+              "api-reference/auth",
+              "api-reference/player",
+              "api-reference/inventory",
+              "api-reference/combat",
+              "api-reference/leaderboard"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Webhooks",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "api-reference/webhooks/player-events",
+              "api-reference/webhooks/rewards"
             ]
           }
         ]
@@ -72,51 +86,50 @@
       "anchors": [
         {
           "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
+          "href": "https://rpgdocs.example.com",
           "icon": "book-open-cover"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
+          "anchor": "Dev Blog",
+          "href": "https://rpgdevblog.example.com",
           "icon": "newspaper"
         }
       ]
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/rpg-light.svg",
+    "dark": "/logo/rpg-dark.svg"
   },
   "navbar": {
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:support@rpgdocs.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Play Demo",
+      "href": "https://play.rpgdemo.com"
     }
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "cursor",
+      "vscode"
+    ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/rpgproject",
+      "github": "https://github.com/rpgproject",
+      "discord": "https://discord.gg/rpgproject",
+      "linkedin": "https://linkedin.com/company/rpgproject"
     }
   }
 }

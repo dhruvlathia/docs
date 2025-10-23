@@ -1,13 +1,13 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "RPG Game Dev Docs",
+  "name": "Anime Character Catcher Bot Docs",
   "colors": {
-    "primary": "#7C3AED",
-    "light": "#A78BFA",
-    "dark": "#5B21B6"
+    "primary": "#FF4B91",
+    "light": "#FFA9C2",
+    "dark": "#E03A83"
   },
-  "favicon": "/favicon-rpg.svg",
+  "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
@@ -16,67 +16,33 @@
           {
             "group": "Getting Started",
             "pages": [
-              "index",
-              "quickstart",
-              "project-setup",
-              "game-loop"
+              "quickstart"
             ]
           },
           {
-            "group": "Game Design",
+            "group": "Game Features",
             "pages": [
-              "design/characters",
-              "design/world",
-              "design/quests",
-              "design/inventory"
+              "features",
+              "economy",
+              "battle",
+              "steal",
+              "commands"
             ]
           },
           {
-            "group": "Player Stats",
+            "group": "Items",
             "pages": [
-              "stats/core-attributes",
-              "stats/combat-stats",
-              "stats/secondary-stats",
-              "stats/progression"
+              "items/poisons",
+              "items/artifacts",
+              "items/weapons"
             ]
           },
           {
-            "group": "Gameplay Systems",
+            "group": "Others",
             "pages": [
-              "systems/combat",
-              "systems/leveling",
-              "systems/economy",
-              "systems/ai"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "customization/themes",
-              "customization/ui",
-              "customization/localization"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API Reference",
-        "groups": [
-          {
-            "group": "Endpoints",
-            "pages": [
-              "api-reference/auth",
-              "api-reference/player",
-              "api-reference/inventory",
-              "api-reference/combat",
-              "api-reference/leaderboard"
-            ]
-          },
-          {
-            "group": "Webhooks",
-            "pages": [
-              "api-reference/webhooks/player-events",
-              "api-reference/webhooks/rewards"
+              "database",
+              "roadmap",
+              "appendix"
             ]
           }
         ]
@@ -85,33 +51,33 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://rpgdocs.example.com",
-          "icon": "book-open-cover"
+          "anchor": "Community",
+          "href": "https://discord.gg/yourlink",
+          "icon": "chat"
         },
         {
-          "anchor": "Dev Blog",
-          "href": "https://rpgdevblog.example.com",
-          "icon": "newspaper"
+          "anchor": "Play Bot",
+          "href": "https://t.me/yourbotusername",
+          "icon": "gamepad"
         }
       ]
     }
   },
   "logo": {
-    "light": "/logo/rpg-light.svg",
-    "dark": "/logo/rpg-dark.svg"
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
   },
   "navbar": {
     "links": [
       {
         "label": "Support",
-        "href": "mailto:support@rpgdocs.com"
+        "href": "mailto:support@animebot.gg"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Play Demo",
-      "href": "https://play.rpgdemo.com"
+      "label": "Play Now",
+      "href": "https://t.me/yourbotusername"
     }
   },
   "contextual": {
@@ -120,16 +86,17 @@
       "view",
       "chatgpt",
       "claude",
+      "perplexity",
       "cursor",
       "vscode"
     ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/rpgproject",
-      "github": "https://github.com/rpgproject",
-      "discord": "https://discord.gg/rpgproject",
-      "linkedin": "https://linkedin.com/company/rpgproject"
+      "x": "https://x.com/animebot",
+      "github": "https://github.com/yourrepo",
+      "discord": "https://discord.gg/yourlink",
+      "website": "https://yourgamewebsite.com"
     }
   }
 }

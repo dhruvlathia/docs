@@ -1,82 +1,70 @@
-# Database Schema (High-level)
+# Database Schema (Firebase Realtime Database)
 
-This document outlines collections/tables and important fields. Example uses MongoDB documents.
+The entire game state is stored in a Firebase Realtime Database. The structure is designed to be flat to optimize for read speeds and prevent deep nesting.
 
-## collections
+## Root Structure
 
-### users
-
-* `_id` (ObjectId)
-* `telegram_id` (number/string)
-* `username` (string)
-* `wallet_coins` (int)
-* `bank_coins` (int)
-* `level` (int)
-* `xp` (int)
-* `attributes` { STR, INT, DEX, AGI, DEF, VIT, LUK }
-* `inventory` {
-  characters: [{ character_id, obtained_at }],
-  weapons: [{ item_id, equipped:boolean }],
-  poisons: [{ item_id, count }],
-  artifacts: [{ artifact_id, level, equipped:boolean }]
+```json
+{
+  "users": {
+    "telegram_user_id_1": {
+      "username": "PlayerOne",
+      "level": 10,
+      "xp": 3100,
+      "coins": {
+        "wallet": 50000,
+        "bank": 250000
+      },
+      "attributes": {
+        "str": 15, "int": 12, "dex": 14, "agi": 16, "def": 13, "vit": 18, "luk": 11
+      },
+      "timestamps": {
+        "last_steal": 1761234567,
+        "last_bet": 1761234888,
+        "created": 1761100000
+      }
+    }
+  },
+  "inventories": {
+    "telegram_user_id_1": {
+      "characters": {
+        "character_id_123": { "obtained_at": 1761200000 },
+        "character_id_456": { "obtained_at": 1761210000 }
+      },
+      "artifacts": {
+        "artifact_id_a1": { "level": 2, "equipped": true },
+        "artifact_id_b2": { "level": 1, "equipped": false }
+      },
+      "poisons": {
+        "poison_id_p1": { "count": 5 },
+        "poison_id_p2": { "count": 2 }
+      }
+    }
+  },
+  "active_effects": {
+    "telegram_user_id_1": {
+      "poison_id_p1": { "expires_at": 1761241767 }
+    }
+  },
+  "game_data": {
+    "characters": {
+      "character_id_123": { "name": "Naruto Uzumaki", "anime": "Naruto", "rarity": "Legendary" }
+    },
+    "artifacts": {
+      "artifact_id_a1": { "name": "Amulet of Swiftness", "base_price": 5000, "description": "+5 AGI." }
+    },
+    "poisons": {
+      "poison_id_p1": { "name": "Draught of Steel", "price": 150, "duration_hours": 2, "description": "+10 DEF for 2 hours." }
+    }
+  },
+  "battle_logs": {
+    "telegram_user_id_1": {
+      "log_id_1": { "opponent": "PlayerTwo", "winner": "PlayerOne", "timestamp": 1761230000 }
+    }
+  },
+  "steal_logs": {
+    "telegram_user_id_1": {
+       "log_id_1": { "target": "PlayerThree", "success": true, "amount": 1250, "timestamp": 1761234567 }
+    }
   }
-* `last_steal_at` (timestamp)
-* `last_bet_at` (timestamp)
-* `created_at`
-
-### characters
-
-* `_id`
-* `name`
-* `anime`
-* `rarity`
-* `owner_id` (ref to users)
-* `card_stats` (optional)
-* `dropped_in_chat_id` (optional)
-
-### items (weapons/poisons/artifacts)
-
-* `_id`
-* `type` ('weapon'|'poison'|'artifact')
-* `name`
-* `base_price`
-* `effects` (JSON)
-* `rarity`
-* `global_supply` (if limited drops)
-* `created_at`
-
-### battles
-
-* `_id`
-* `player1_id`
-* `player2_id`
-* `winner_id`
-* `loser_id`
-* `player1_snapshot` (attributes & equipment)
-* `player2_snapshot`
-* `used_items`
-* `coin_change`
-* `timestamp`
-
-### steal_logs
-
-* `_id`
-* `thief_id`
-* `target_id`
-* `success` (bool)
-* `amount`
-* `thief_before`
-* `target_before`
-* `artifacts_involved`
-* `timestamp`
-
-## Indexing
-
-* Index on `users.telegram_id`
-* Index on `characters.owner_id`
-* Index on `battles.player1_id`, `battles.player2_id`, `timestamp`
-
-## Storage tips
-
-* Store active poison timers in Redis keyed by `user:poison:<poisonId>` with TTL.
-* Use write-ahead logs for coin transfers to avoid race conditions.
+}

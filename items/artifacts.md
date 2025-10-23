@@ -1,52 +1,113 @@
-# Artifacts (Equipable & Upgradable)
+# Item List: Artifacts
 
-Artifacts are persistent items that give passive bonuses or unique abilities. They can be equipped (limit = floor(level / 2)) and upgraded.
+Artifacts are permanent, upgradable items that offer passive bonuses. The base effect listed is for Level 1. Upgrading an artifact increases its effect. Prices are high, reflecting their permanent value.
 
-## Equip rules
+### Battle Artifacts (Offensive) - 25
+1.  **Blade of the Berserker:** +5 STR. (Base Price: 2,000 coins)
+2.  **Ranger's Quiver:** +5 DEX. (Base Price: 2,000 coins)
+3.  **Archmage's Codex:** +5 INT. (Base Price: 2,000 coins)
+4.  **Boots of Haste:** +5 AGI. (Base Price: 2,000 coins)
+5.  **Critical Scope:** +2% Critical Hit Chance. (Base Price: 3,000 coins)
+6.  **Serrated Dirk:** Attacks inflict a "bleed," dealing 1% of opponent's health as extra damage. (Base Price: 5,000 coins)
+7.  **Titan's Gauntlet:** +10% to STR. (Base Price: 7,500 coins)
+8.  **Void Pendant:** +10% to INT. (Base Price: 7,500 coins)
+9.  **Vampiric Ring:** Heals for 5% of damage dealt. (Base Price: 6,000 coins)
+10. **Executioner's Axe:** Deals 20% more damage to opponents below 25% health. (Base Price: 8,000 coins)
+11. **Chain Lightning Orb:** 10% chance to deal bonus elemental damage. (Base Price: 4,000 coins)
+12. **Focus Crystal:** Prevents your attacks from being dodged. (Base Price: 7,000 coins)
+13. **War Horn of Command:** Boosts all stats by +2 in battle. (Base Price: 10,000 coins)
+14. **Glass Cannon Shard:** +25% damage dealt, +15% damage taken. (Base Price: 5,000 coins)
+15. **Time-Turner:** 5% chance to attack twice in one battle resolution. (Base Price: 15,000 coins)
+16. **Armor Breaker Helm:** Your attacks ignore 5% of enemy DEF. (Base Price: 4,500 coins)
+17. **Celestial Arrowhead:** Your attacks ignore 5% of enemy AGI (dodge). (Base Price: 4,500 coins)
+18. **Glove of Precision:** +10% to DEX. (Base Price: 7,500 coins)
+19. **Momentum Greaves:** +1 AGI for every consecutive battle won (max +10, resets on loss). (Base Price: 6,000 coins)
+20. **Book of Combos:** +1 STR for every 10 DEX you have. (Base Price: 5,500 coins)
+21. **Soulfire Lantern:** Damage increases by 1% for every 10% HP you are missing. (Base Price: 6,500 coins)
+22. **Infinity Edge:** +50% Critical Hit Damage. (Base Price: 12,000 coins)
+23. **Runic Tattoo:** Converts 10% of your INT into bonus STR. (Base Price: 5,000 coins)
+24. **Cursed Doll:** All stat-reducing poisons you use are 10% more effective. (Base Price: 4,000 coins)
+25. **Dragon's Eye:** Reveals an opponent's equipped artifacts before a battle begins. (Base Price: 9,000 coins)
 
-* `max_equipped = floor(user.level / 2)`
-* Equipping an artifact modifies the player's live stats and defensive values (used by steal/battle services).
+### Battle Artifacts (Defensive) - 25
+26. **Aegis of the Protector:** +10 DEF. (Base Price: 3,000 coins)
+27. **Heart of the Colossus:** +10 VIT. (Base Price: 3,000 coins)
+28. **Guardian's Shield:** +10% to DEF. (Base Price: 8,000 coins)
+29. **Mountain's Core:** +10% to VIT. (Base Price: 8,000 coins)
+30. **Thornmail Vest:** Reflects 5% of physical damage back to the attacker. (Base Price: 6,000 coins)
+31. **Cloak of Shadows:** 5% chance to dodge any incoming attack. (Base Price: 7,500 coins)
+32. **Ankh of Rebirth:** Once per day, if you lose a battle, you do not lose any coins. (Base Price: 10,000 coins)
+33. **Purifier's Charm:** Grants 25% resistance to all negative poison effects. (Base Price: 4,000 coins)
+34. **Stoneplate Ring:** Reduces incoming critical hit damage by 25%. (Base Price: 5,000 coins)
+35. **Adaptive Helm:** Reduces damage taken from opponents with higher INT than you by 10%. (Base Price: 4,500 coins)
+36. **Force of Nature:** Increases the effectiveness of defensive poisons you use by 10%. (Base Price: 4,000 coins)
+37. **Monk's Headband:** +1 DEF for every 10 AGI you have. (Base Price: 5,500 coins)
+38. **Leviathan's Hide:** Reduces damage from opponents with higher STR than you by 10%. (Base Price: 4,500 coins)
+39. **Phoenix Tear:** Once per day, survive a fatal blow in battle with 10% HP. (Base Price: 15,000 coins)
+40. **Brawler's Ward:** You take 1% less damage for every 10% HP you are missing. (Base Price: 6,500 coins)
+41. **Talisman of Resilience:** Reduces the duration of negative poison effects on you by 20%. (Base Price: 3,500 coins)
+42. **Spirit Visage:** Increases the effectiveness of any healing effects by 20%. (Base Price: 5,000 coins)
+43. **Frozen Heart:** Opponents who attack you have their AGI reduced by 5% for the battle. (Base Price: 7,000 coins)
+44. **Aegis of Foresight:** Reveals an opponent's active poisons before a battle. (Base Price: 3,000 coins)
+45. **Stalwart Medallion:** Cannot be defeated by an opponent more than 10 levels below you. (Base Price: 5,000 coins)
+46. **Barrier Locket:** At the start of a battle, gain a shield equal to 5% of your max health. (Base Price: 6,000 coins)
+47. **Paladin's Vow:** +2 VIT for every artifact you have equipped. (Base Price: 4,000 coins)
+48. **Warden's Eye:** Prevents opponents from seeing your equipped artifacts. (Base Price: 9,000 coins)
+49. **Last Whisper:** When you lose a battle, the winner gains 20% less XP. (Base Price: 2,500 coins)
+50. **Redemption Stone:** After losing a battle, your next battle within 10 minutes gives you +10 to all stats. (Base Price: 8,000 coins)
 
-## Upgrade model
+### Stealing & Protection Artifacts - 20
+51. **Bandit's Gloves:** +5% steal success chance. (Base Price: 5,000 coins)
+52. **Bag of Holding:** Increases amount stolen by 5%. (Base Price: 7,500 coins)
+53. **Master Key:** Your steals bypass 10% of a target's artifact-based steal protection. (Base Price: 12,000 coins)
+54. **Cloak of Deceit:** Your steal attempts have a 25% chance of being anonymous. (Base Price: 4,000 coins)
+55. **Swift stopwatch:** Reduces steal cooldown by 10%. (Base Price: 6,000 coins)
+56. **Smokescreen Charm:** If your steal fails, you automatically avoid any negative counter-effects from the target's artifacts. (Base Price: 8,000 coins)
+57. **Burglar's Map:** Reveals a target's wallet balance before you attempt to steal. (Base Price: 3,000 coins)
+58. **Leverage Crowbar:** Stealing from players with a higher level than you has a +5% base success chance. (Base Price: 5,500 coins)
+59. **Phantom Footsteps:** After a successful steal, you cannot be stolen from for 1 hour. (Base Price: 7,000 coins)
+60. **Greed's Magnet:** A small percentage (0.1%) of all coins stolen in the game are added to your wallet. (Base Price: 50,000 coins)
+61. **Watchman's Lantern:** -10% chance of being stolen from. (Base Price: 6,000 coins)
+62. **Honed Senses:** You receive a DM when another player views your profile. (Base Price: 2,500 coins)
+63. **Reinforced Safe:** Protects 10% of your wallet coins from being stolen. (Base Price: 8,000 coins)
+64. **Talisman of Warding:** Grants complete immunity to stealing for 1 hour per day (activated ability). (Base Price: 10,000 coins)
+65. **Retribution Mirror:** A thief who fails to steal from you loses an amount of coins equal to 5% of what they tried to steal. (Base Price: 9,000 coins)
+66. **Decoy Purse:** When stolen from, the thief has a 20% chance to steal from a "decoy" holding only 10% of your actual wallet. (Base Price: 7,500 coins)
+67. **Alarm Golem:** -5% steal chance against you for each defensive artifact you have equipped. (Base Price: 12,500 coins)
+68. **Karma Charm:** If successfully stolen from, your next steal attempt has a +20% success chance. (Base Price: 5,000 coins)
+69. **Vault of Secrecy:** Hides your coin balance from your public profile. (Base Price: 3,500 coins)
+70. **Barbed Wallet:** A thief who successfully steals from you takes 1% of the stolen amount as damage to their stats in their next battle. (Base Price: 4,500 coins)
 
-* `upgrade_cost(level n -> n+1) = base_price * multiplier^(n-1)`
-* `multiplier` recommended = 2.0
-* Upgrading increases effect size and theft defense.
+### Betting & Economy Artifacts - 20
+71. **Lucky Clover:** +5 LUK. (Base Price: 2,500 coins)
+72. **Gambler's Dice:** Increases betting payouts by 5%. (Base Price: 5,000 coins)
+73. **Amulet of Insight:** Reduces betting cooldowns by 10%. (Base Price: 4,000 coins)
+74. **Coin of Fate:** Once per day, allows you to re-roll a lost bet. (Base Price: 9,000 coins)
+75. **Weighted Die:** +2% chance to win any bet. (Base Price: 6,000 coins)
+76. **King's Ransom:** Increases the maximum bet limit by 10%. (Base Price: 7,000 coins)
+77. **Jester's Hat:** When you lose a bet, you have a 10% chance to get your wager back. (Base Price: 4,500 coins)
+78. **Economicon:** Reduces all shop prices by 2%. (Base Price: 8,000 coins)
+79. **Golden Goose:** Passively generates `level * 10` coins per day. (Base Price: 20,000 coins)
+80. **Banker's Seal:** Increases your bank capacity by 10%. (Base Price: 7,500 coins)
+81. **Artisan's Hammer:** Reduces artifact upgrade costs by 2%. (Base Price: 10,000 coins)
+82. **Trader's Medallion:** Reduces trade fees by 25%. (Base Price: 4,000 coins)
+83. **Miser's Ring:** When you receive coins from any source, gain an extra 1%. (Base Price: 15,000 coins)
+84. **Collector's Scope:** Increases the chance of finding Rare characters by 5%. (Base Price: 6,000 coins)
+85. **Investor's Bond:** At the end of each week, gain 0.5% interest on the coins in your bank. (Base Price: 25,000 coins)
+86. **Insurance Policy:** The first time you are successfully stolen from each day, 25% of the stolen amount is refunded. (Base Price: 8,500 coins)
+87. **Fortune's Favor:** Your first bet of the day has a +10% win chance. (Base Price: 5,000 coins)
+88. **Scavenger's Eye:** 5% chance to find a small amount of coins after winning a battle. (Base Price: 3,000 coins)
+89. **Alchemist's Stone:** 1% chance that a used poison is not consumed. (Base Price: 12,000 coins)
+90. **Black Market Pass:** Unlocks a secret shop with rare and forbidden items. (Base Price: N/A, quest reward).
 
-## Artifact list (20) — name + short effect & role
-
-1. **Timekeeper’s Relic** — +10% poison duration & -10% poison cooldown. (Support)
-2. **Crystal Pendant** — +15% XP gain. (Progression)
-3. **Mirror Amulet** — Reflects % damage back to attacker. (Defense)
-4. **Lucky Bell** — +2 LUK base; each level +1 LUK. (Luck)
-5. **Titan Core** — +10% STR base (scales). (Offense)
-6. **Phantom Cape** — +5% dodge chance (scales). (Evasion)
-7. **Eternal Flame** — One revive per day (upgrade improves HP%). (Survival)
-8. **Infinity Lens** — Reveal opponent stats pre-battle. (Tactical)
-9. **Soul Gem** — Convert X% of dealt damage to HP. (Sustain)
-10. **Aether Crown** — Extend poison durations by +30s (scales). (Support)
-11. **Guardian Talisman** — Flat +DEF. (Tank)
-12. **Silent Coinpurse** — +5% bank capacity (per level). (Economy)
-13. **Lockbreaker Ring** — +5% steal success per level (offensive). (Thief)
-14. **Wardstone** — Reduces chance of being stolen from (defensive). (Anti-steal)
-15. **Seal of Warding** — Temporary toggleable anti-steal immunity. (Utility)
-16. **Trade Sigil** — Reduce marketplace fees. (Economy)
-17. **Battle Standard** — Small passive to all combat stats. (Buff)
-18. **Haggler’s Eye** — -5% shop prices (scales). (Economy)
-19. **Echo Locket** — On loss, recover small coin from opponent (tiny %). (Soft rebalance)
-20. **Aegis of Thorns** — Backfires on thief on fail (damage/refund chance). (Punish)
-
-## Artifact value accounting
-
-* `artifact_value = base_price + sum(upgrade_costs_paid)`
-* Display artifact level, base effect, and next-level upgrade cost in `/inventory` and `/shop`.
-
-## Anti-steal interactions
-
-* Defensive artifacts (Wardstone, Seal of Warding, Aegis) reduce steal chance or create penalties for thieves.
-* Offensive artifact (Lockbreaker) increases thief chance when equipped.
-
-## Implementation tips
-
-* Store artifact object with `{ id, name, level, base_price, owner_id, equipped:boolean }`
-* Precompute artifact_defense_value per equipped artifact for steal formula.
+### Utility & Progression Artifacts - 10
+91. **Pendant of Wisdom:** +10% XP gain from all sources. (Base Price: 10,000 coins)
+92. **Tome of Knowledge:** +2 INT for every 5 levels you have. (Base Price: 5,000 coins)
+93. **Training Weights:** +2 STR and +2 DEF, but -5 AGI. (Base Price: 3,000 coins)
+94. **Challenger's Crest:** Gain 10% more XP and coins from defeating players of a higher level. (Base Price: 6,000 coins)
+95. **Explorer's Compass:** Reduces the time between character drops in the chat by a small amount (global effect, does not stack). (Base Price: 30,000 coins)
+96. **Friendship Bracelet:** When in a battle with a player on a friends list, both players gain +5% XP. (Base Price: 2,500 coins)
+97. **Crown of the Commander:** Allows the creation of a guild. (Base Price: 100,000 coins)
+98. **Reset Totem:** Once per month, allows a full redistribution of attribute points. (Base Price: 25,000 coins)
+99. **Cosmetic Easel:** Unlocks the ability to apply cosmetic skins to character cards. (Base Price: 7,500 coins)
+100. **The World Mirror:** Allows you to view the global leaderboard of all players. (Base Price: 1,000 coins)

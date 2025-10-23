@@ -1,44 +1,24 @@
 # Battle System
 
-Battles are resolved server-side and stored. They use player attributes, equipment, poisons, and artifacts.
+The battle system is a core component of the game, allowing players to test their strength and earn rewards.
 
-## Core attributes
+## Initiating a Battle
+A player can challenge another using `/battle [@user]`. The challenged player must accept for the battle to begin.
 
-* STR, INT, DEX, AGI, DEF, VIT, LUK
+## Combat Resolution
+The winner is determined by a weighted formula that combines player attributes, item bonuses, and a small random factor.
 
-## Combat scoring (example)
+-   **Formula:** `Combat Score = (STR * 1.2) + (DEX * 1.1) + (AGI * 1.1) + (INT * 1.0) + (DEF * 0.9) + (VIT * 1.0) + (LUK * 0.5)`
+-   This score is then modified by:
+    -   Active poison effects.
+    -   Equipped artifact bonuses.
+    -   A random variance of +/- 5% to prevent ties and ensure unpredictability.
 
-```
-combat_score = STR*1.2 + DEX*1.1 + AGI*1.1 + INT*1.0 + DEF*0.9 + VIT*0.8 + LUK*0.5 + random_factor
-```
+The player with the higher final score wins the battle.
 
-* `random_factor` = uniform random between -5% and +5% of computed score.
-* Apply active poison and equipped artifact modifiers before final score.
+## Rewards and Penalties
+-   **Winner:** Receives a base amount of coins and XP, with bonuses based on the level difference between the players.
+-   **Loser:** Loses a small amount of coins (a "repair fee"). No XP is lost.
 
-## Turn model
-
-* Instant resolution (single formula) or simulated rounds (multiple iterations) — MVP: instant resolution.
-* Winner receives:
-
-  * Coin reward: `floor( base_reward * (winner_level/loser_level) )`
-  * XP reward: based on level delta and rarity of used characters.
-* Loser may lose a small percentage of wallet coins.
-
-## Battle logs
-
-* Store: `{id, player1_id, player2_id, winner_id, loser_id, player1_stats_snapshot, player2_stats_snapshot, used_items, timestamp, coin_change}`
-
-## PvP fairness & anti-abuse
-
-* Enforce cooldowns between battles.
-* Prevent repeated auto-farming (limits on challenges per hour).
-* For duels, require consent (challenge -> target accepts).
-
-## UI
-
-* Use inline buttons: `[Accept] [Decline]` for challenge; on resolution show `[Rematch] [Battle History]`.
-
-## Implementation tips
-
-* Use deterministic seeded RNG when simulating in test or replay mode.
-* Store snapshots of stats in battle logs so future recalculations are consistent.
+## Battle Logs
+Every battle is recorded and can be viewed with `/battlehistory`. The log includes the participants, the winner, and a snapshot of the key stats at the time of the battle.

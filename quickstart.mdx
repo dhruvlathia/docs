@@ -1,21 +1,18 @@
----
-title: Quickstart
----
+Welcome to the documentation for the Anime Character Catcher Bot. This guide provides a high-level overview of the game's design and technical foundation.
 
-# Quickstart — Anime Character Catcher
+## Core Concept
 
-Welcome. This guide gets a developer or maintainer from zero to running the bot locally and understanding basic data flows.
+The bot is a Telegram-based RPG where users collect anime character cards, battle each other, manage an economy, and use a variety of items to gain advantages. The core loop involves:
 
-## Prerequisites
-- Node.js >= 18 (if you pick Node.js) or Python 3.10+ (if you pick Python microservices)
-- MongoDB or PostgreSQL running (this doc assumes **MongoDB** by default)
-- Telegram Bot token (create via @BotFather)
-- Optional: Redis (for rate-limits and active poison timers)
-- Recommended: `pm2` or Docker for production process management
+1.  **Collecting:** Characters automatically drop in chats.
+2.  **Battling:** Users fight each other using their stats and items.
+3.  **Growing:** Players level up, upgrade artifacts, and build their net worth.
+4.  **Interacting:** Players can trade, bet, and even steal from each other.
 
-## Quick local run (Node.js example)
-1. Clone repo and install:
-```bash
-git clone <repo-url>
-cd repo
-npm install
+## Technical Stack
+
+-   **Language:** Node.js (using `telegraf.js`) or Python (using `aiogram`).
+-   **Database:** **Firebase Realtime Database** for all persistent data, including user profiles, inventories, and game state.
+-   **Hosting:** A virtual private server (VPS) or a cloud platform (e.g., Heroku, Google Cloud).
+
+This documentation will serve as the single source of truth for all game mechanics, item lists, and database architecture.

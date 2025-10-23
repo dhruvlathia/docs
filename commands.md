@@ -1,55 +1,29 @@
-# Commands (User-facing)
+# Bot Commands
 
-## Primary
+This is the comprehensive list of user-facing commands.
 
-* `/grab <character name>`
-  Claim the currently dropped character. Inline "Grab" button also available.
+### Core Commands
+-   `/profile [@user]` - View your own or another user's profile, including level, stats, and equipped items.
+-   `/inventory` - See your collected characters, poisons, and artifacts.
+-   `/grab <character_name>` - Claim a dropped character.
+-   `/shop` - Open the item shop.
+-   `/help` - Shows this command list.
 
-* `/inventory`
-  Show characters, weapons, poisons, artifacts, and equipped items.
+### Economy Commands
+-   `/networth [@user]` - Calculate and display the total asset value.
+-   `/deposit <amount>` - Deposit coins into your bank.
+-   `/withdraw <amount>` - Withdraw coins from your bank.
+-   `/trade [@user]` - Initiate a trade with another player.
 
-* `/profile`
-  Show your profile: level, XP, core attributes, equipped items, wallet.
+### Action Commands
+-   `/battle [@user]` - Challenge another player to a battle.
+-   `/bet <amount>` - Enter the betting menu with a specified wager.
+-   `/steal [@user]` - Attempt to steal coins from another player.
+-   `/use <poison_name>` - Activate a poison from your inventory.
+-   `/equip <artifact_name>` - Equip an artifact.
+-   `/unequip <artifact_name>` - Unequip an artifact.
+-   `/upgrade <artifact_name>` - Attempt to upgrade an equipped artifact.
 
-* `/networth @user?`
-  Show full networth. If user not mentioned, shows your own.
-
-* `/shop`
-  Opens inline shop with categories: Weapons / Poisons / Artifacts / Bank.
-
-* `/bet <amount>`
-  Open betting menu for available games.
-
-* `/battle @user`
-  Challenge a user to PvP. Inline rematch and spectate options available.
-
-* `/battlehistory @user?`
-  Show paginated battle logs. Default shows recent 10.
-
-* `/steal @user`
-  Attempt to steal coins from a user — subject to cooldowns and defenses.
-
-* `/help`
-  Display commands grouped with inline buttons for each group.
-
-## Bank commands
-
-* `/deposit <amount>` — Deposit coins into bank.
-* `/withdraw <amount>` — Withdraw coins from bank.
-
-## Moderation & utility (admin)
-
-* `/drop` (admin) — force a drop in a chat.
-* `/balance @user` (admin) — check wallet & bank for user.
-* `/setcoins @user <amount>` (admin) — set coin balance for testing.
-
-## Inline Buttons
-
-* On character drop: `[⚡ Grab Character] [📜 Info]`
-* On shop view: `[🗡️ Weapons] [☠️ Poisons] [⚱️ Artifacts] [💰 Bank]`
-* On profile: `[🎒 Inventory] [⚔️ Battle] [💸 Networth]`
-
-## Notes
-
-* Commands like `/grab`, `/shop`, and `/bet` are core — show as primary in `/help`.
-* Use callback queries for inline actions to keep chat clean.
+### Informational Commands
+-   `/battlehistory [@user]` - View the last 10 battles fought.
+-   `/leaderboard <category>` - View leaderboards (e.g., `level`, `networth`, `wins`).

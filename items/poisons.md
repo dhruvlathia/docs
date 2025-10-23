@@ -1,33 +1,68 @@
-# Poisons (Consumables)
+---
 
-Poison items are consumables stored in inventory. They are **used** to apply temporary effects, durations defined on purchase.
+### **/docs/items/poisons.md**
 
-## Usage rules
+```markdown
+# Item List: Poisons
 
-* Poisons must be explicitly used (e.g., `/use poison_name` or via profile -> Poisons -> Use).
-* Same-poison stacking: **refresh duration** instead of stacking magnitude.
-* Different poisons: effects apply concurrently unless designed to conflict.
-* Each poison has: `base_price`, `duration_seconds`, `effects` (stat modifiers).
+Poisons are one-time use consumable items that provide powerful, temporary effects. All poison durations are **2 hours** unless stated otherwise. They are cheap and designed for strategic, short-term advantages.
 
-## Suggested Poisons (10)
+### Battle Poisons (Offensive)
+1.  **Elixir of Rage:** +5 STR. (Price: 100 coins)
+2.  **Hunter's Brew:** +5 DEX. (Price: 100 coins)
+3.  **Mageblood Potion:** +5 INT. (Price: 100 coins)
+4.  **Draught of Haste:** +5 AGI. (Price: 100 coins)
+5.  **Flask of Cruelty:** +5% Critical Hit Chance. (Price: 150 coins)
+6.  **Vial of Piercing:** Ignores 10% of opponent's DEF. (Price: 200 coins)
+7.  **Berserker's Fume:** +15 STR, -10 DEF. (Price: 250 coins)
+8.  **Assassin's Concoction:** Next battle attack is a guaranteed critical hit. (Duration: 1 use). (Price: 500 coins)
+9.  **Venom of Fatigue:** Opponent's AGI is reduced by 10% in the next battle. (Price: 300 coins)
+10. **Tincture of Weakness:** Opponent's STR is reduced by 10% in the next battle. (Price: 300 coins)
 
-1. **Speed Venom** — Reduces betting cooldown by 5s. Duration: 180s
-2. **Luck Tonic** — +5 LUK. Duration: 120s
-3. **Iron Skin** — +4 DEF. Duration: 180s
-4. **Shadow Mist** — +4 AGI. Duration: 180s
-5. **Focus Serum** — +5 DEX (reduce miss chance). Duration: 120s
-6. **Power Elixir** — +6 STR. Duration: 120s
-7. **Cursed Flask** — +10% damage, -5 DEF. Duration: 180s
-8. **Gamble Nectar** — +10% win chance in bets. Duration: 300s
-9. **Mindstorm Brew** — +5 INT. Duration: 180s
-10. **Phoenix Drop** — One-time revive with 20% HP on defeat (single use)
+### Battle Poisons (Defensive)
+11. **Potion of Iron Skin:** +10 DEF. (Price: 150 coins)
+12. **Elixir of Vitality:** +10 VIT. (Price: 150 coins)
+13. **Guardian's Draught:** Reduces incoming damage by 10% in the next battle. (Price: 200 coins)
+14. **Troll's Blood Potion:** Regenerates 5% of max HP after the next battle (win or lose). (Price: 250 coins)
+15. **Antidote of Clarity:** Removes negative poison effects from the user. (Duration: Instant). (Price: 100 coins)
+16. **Mirage Flask:** 15% chance to completely dodge an opponent's attack. (Price: 350 coins)
+17. **Bulwark Brew:** DEF is increased by 25% but AGI is reduced by 10%. (Price: 200 coins)
+18. **Last Stand Elixir:** If HP would drop to 0, survive with 1 HP. (Duration: 1 battle). (Price: 750 coins)
+19. **Thorncoat Potion:** Reflects 5% of damage taken back to the attacker. (Price: 200 coins)
+20. **Warding Incense:** Grants immunity to opponent's offensive poisons for the next battle. (Price: 150 coins)
 
-## Pricing & sell-back
+### Stealing Poisons
+21. **Thief's Wit Potion:** +10% steal success chance. (Price: 250 coins)
+22. **Shadow Veil Draught:** Makes your next steal attempt anonymous (target gets a generic "someone stole from you" message). (Price: 400 coins)
+23. **Ghost's Touch Elixir:** Reduces steal cooldown by 50% for 2 hours. (Price: 300 coins)
+24. **Greed's Folly Tincture:** Increases amount stolen by 5% if successful. (Price: 350 coins)
+25. **Distraction Gas:** Target cannot use defensive items against your next steal. (Duration: 1 use, very rare). (Price: 1,000 coins)
+26. **Lookout's Brew:** User is notified if someone is attempting to steal from them. (Duration: 3 hours). (Price: 200 coins)
+27. **Alchemist's Foil:** Next thief who fails to steal from you pays double the penalty. (Price: 150 coins)
+28. **Slippery Fingers Flask:** -10% steal success chance for anyone targeting you. (Price: 300 coins)
+29. **Booby Trap Brew:** A thief who fails to steal from you has their own steal cooldown doubled. (Price: 200 coins)
+30. **Marked Coin Potion:** If stolen from, reveals the thief's name even if they used an anonymity poison. (Price: 250 coins)
 
-* Set purchase price and a reduced sell-back (e.g., 25% of buy price) to discourage flipping.
-* Active poisons have no sell-back until they expire.
+### Betting Poisons
+31. **Gambler's Charm:** +5 LUK. (Price: 100 coins)
+32. **Winning Streak Elixir:** Increases betting payouts by 5%. (Price: 200 coins)
+33. **Cooldown Chrono:** Reduces betting cooldown by 50% for 2 hours. (Price: 250 coins)
+34. **Oracle's Vision:** Shows the probability of the next bet (e.g., "Heads: 50%"). (Duration: 1 use). (Price: 150 coins)
+35. **Safety Net Potion:** Your next lost bet returns 25% of the wager. (Duration: 1 use). (Price: 100 coins)
+36. **Double or Nothing Draught:** The next bet has its payout and loss doubled. (Duration: 1 use). (Price: 300 coins)
+37. **Steady Hand Tonic:** Removes the LUK stat from betting calculations, making it pure probability. (Price: 50 coins)
+38. **All-In Adrenaline:** Allows you to bypass the maximum bet limit for one bet. (Price: 500 coins)
+39. **Jester's Juice:** Next bet has a 1% chance to pay out 10x, but a 10% chance to lose 2x the wager. (Price: 150 coins)
+40. **Calm Spirit Brew:** Grants immunity to betting-related poisons from other players (if any exist). (Price: 100 coins)
 
-## Implementation tips
-
-* Keep active-poison timers in Redis with TTL for scalability.
-* Show active status on `/profile` and attach durations to battle calculations.
+### Utility Poisons
+41. **Scholar's Mind Potion:** +10% XP gain from all sources. (Duration: 3 hours). (Price: 400 coins)
+42. **Artisan's Focus:** Reduces artifact upgrade costs by 5%. (Duration: 1 hour). (Price: 300 coins)
+43. **Merchant's Friend Brew:** Reduces shop prices by 5%. (Duration: 1 hour). (Price: 200 coins)
+44. **Pathfinder's Potion:** Increases the chance of rare character drops nearby. (Price: 500 coins)
+45. **Forger's Fire:** Increases artifact upgrade success chance by 5% (if upgrades can fail). (Price: 350 coins)
+46. **Memory Draught:** Resets all attribute points for redistribution. (Duration: 1 use). (Price: 1,000 coins)
+47. **Chameleon Concoction:** Temporarily changes your username color in leaderboards. (Duration: 24 hours). (Price: 50 coins)
+48. **Rebirth Potion:** Resets your battle history (visual only, does not affect stats). (Duration: 1 use). (Price: 100 coins)
+49. **Friendship Brew:** Next gift or trade has no fee. (Duration: 1 use). (Price: 50 coins)
+50. **Midas Touch Tonic:** Next 5 battle wins grant 10% extra coins. (Price: 250 coins)

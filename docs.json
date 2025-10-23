@@ -34,7 +34,8 @@
             "pages": [
               "items/poisons",
               "items/artifacts",
-              "items/weapons"
+              "items/weapons",
+              "items/characters"
             ]
           },
           {

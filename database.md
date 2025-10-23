@@ -32,12 +32,12 @@ The entire game state is stored in a Firebase Realtime Database. The structure i
         "character_id_456": { "obtained_at": 1761210000 }
       },
       "artifacts": {
-        "artifact_id_a1": { "level": 2, "equipped": true },
-        "artifact_id_b2": { "level": 1, "equipped": false }
+        "artifact_id_1": { "level": 2, "equipped": true },
+        "artifact_id_99": { "level": 1, "equipped": false }
       },
       "poisons": {
-        "poison_id_p1": { "count": 5 },
-        "poison_id_p2": { "count": 2 }
+        "poison_id_100": { "count": 5 },
+        "poison_id_101": { "count": 2 }
       }
     }
   },
@@ -48,13 +48,16 @@ The entire game state is stored in a Firebase Realtime Database. The structure i
   },
   "game_data": {
     "characters": {
-      "character_id_123": { "name": "Naruto Uzumaki", "anime": "Naruto", "rarity": "Legendary" }
+      "character_id_112": { "name": "Naruto Uzumaki (Sage)", "anime": "Naruto", "rarity": "Legendary", "price": 250000, "stats": {"str": 40, "vit": 50, "agi": 30} }
     },
     "artifacts": {
-      "artifact_id_a1": { "name": "Amulet of Swiftness", "base_price": 5000, "description": "+5 AGI." }
+      "artifact_id_100": { "name": "Amulet of Swiftness", "base_price": 5000, "description": "+5 AGI." }
     },
     "poisons": {
-      "poison_id_p1": { "name": "Draught of Steel", "price": 150, "duration_hours": 2, "description": "+10 DEF for 2 hours." }
+      "poison_id_89": { "name": "Draught of Steel", "price": 150, "duration_hours": 2, "description": "+10 DEF for 2 hours." }
+    },
+    "weapons": {
+      "weapon_id_100": { "name": "Excalibur", "rarity": "Mythic", "price": 400000, "stats": {"str": 100, "vit": 50, "def": 20} }
     }
   },
   "battle_logs": {
